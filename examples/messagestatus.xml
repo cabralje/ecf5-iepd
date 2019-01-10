@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cbrn:MessageStatus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:ecf="https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/ecf" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.1/" xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/4.1/" xsi:schemaLocation="http://release.niem.gov/niem/domains/cbrn/4.1/ ../schema/niem/domains/cbrn/4.0/cbrn.xsd http://release.niem.gov/niem/niem-core/4.0/ ../schema/niem/niem-core/4.0/niem-core.xsd https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/ecf ../schema/ecf.xsd" cbrn:systemSimulatedIndicator="false">
+	<cbrn:SystemEventDateTime>2017-01-07T13:47:42.0Z</cbrn:SystemEventDateTime>
+	<cbrn:SystemOperatingModeCode>Ops</cbrn:SystemOperatingModeCode>
+	<cbrn:CredentialsAuthenticatedCode>Authenticated</cbrn:CredentialsAuthenticatedCode>
+	<cbrn:MessageStatusCode>DataError</cbrn:MessageStatusCode>
+	<cbrn:MessageContentError>
+		<cbrn:ErrorNodeName>filing:FilingMessage</cbrn:ErrorNodeName>
+		<cbrn:ErrorDescription>
+			<cbrn:ErrorCodeText>1</cbrn:ErrorCodeText>
+		</cbrn:ErrorDescription>
+	</cbrn:MessageContentError>
+	<cbrn:MessageHandlingError>
+		<cbrn:ErrorCodeText>1</cbrn:ErrorCodeText>
+	</cbrn:MessageHandlingError>
+	<cbrn:ResendRequestIndicator>false</cbrn:ResendRequestIndicator>
+	<ecf:MessageStatusAugmentation>
+		<ecf:ServiceRecipientID>
+			<nc:IdentificationID>1</nc:IdentificationID>
+		</ecf:ServiceRecipientID>
+		<nc:DocumentIdentification>
+			<nc:IdentificationID>1</nc:IdentificationID>
+		</nc:DocumentIdentification>
+	</ecf:MessageStatusAugmentation>
+</cbrn:MessageStatus>

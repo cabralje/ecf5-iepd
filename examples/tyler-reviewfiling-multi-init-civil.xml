@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wrapper:ReviewFilingRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.1/" xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/4.0/" xmlns:biom="http://release.niem.gov/niem/domains/biometrics/3.2/" xmlns:ecf="https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/ecf" xmlns:filing="https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/filing" xmlns:wrapper="https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/wrappers" xmlns:payment="https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/payment" xsi:schemaLocation="https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/wrappers ../schema/wrappers.xsd">
+	<filing:FilingMessage structures:id="Filing1" xsi:schemaLocation="https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/filing ../schema/filing.xsd">
+		<!-- DocumentIdentification below is required by the schema but is unused -->
+		<nc:DocumentIdentification/>
+		<ecf:SendingMDELocationID>
+			<nc:IdentificationID>http://example.com/efsp1</nc:IdentificationID>
+		</ecf:SendingMDELocationID>
+		<ecf:ServiceInteractionProfileCode>urn:oasis:names:tc:legalxml-courtfiling:schema:xsd:WebServicesMessaging-5.0</ecf:ServiceInteractionProfileCode>
+		<j:CaseCourt>
+			<nc:OrganizationIdentification>
+				<!-- content reference for a court organization -->
+				<nc:IdentificationID>harris:dc</nc:IdentificationID>
+			</nc:OrganizationIdentification>
+		</j:CaseCourt>
+		<!-- nc:DocumentPostDate below contains the timestamp of the request -->
+		<nc:DocumentPostDate>
+			<nc:DateTime>2008-07-07T13:47:42.0Z</nc:DateTime>
+		</nc:DocumentPostDate>
+		<ecf:ElectronicServiceInformation>
+			<ecf:ReceivingMDELocationID>
+				<nc:IdentificationID>http://example.com/efsp2</nc:IdentificationID>
+			</ecf:ReceivingMDELocationID>
+			<ecf:ReceivingMDEProfileCode>urn:oasis:names:tc:legalxml-courtfiling:schema:xsd:WebServicesMessaging-5.0</ecf:ReceivingMDEProfileCode>
+			<!-- ecf:ServiceRecipientID identifies who was served electronically. see section 6.2.9 -->
+			<ecf:ServiceRecipientID>
+				<nc:IdentificationID>69395710-70B5-4C52-9DF3-F8C6A59A710C</nc:IdentificationID>
+			</ecf:ServiceRecipientID>
+		</ecf:ElectronicServiceInformation>
+		<filing:FilingConnectedDocument structures:id="Document2">
+			<nc:DocumentDescriptionText>Motion</nc:DocumentDescriptionText>
+			<!-- The nc:DocumentFileControlID element below holds the identifier for the document in the FAMDE - e.g. reference number -->
+			<nc:DocumentFileControlID>001X</nc:DocumentFileControlID>
+			<!-- The Document Identification is a required element and specifies an identifer from the submitter, we however do not use it. -->
+			<nc:DocumentIdentification/>
+			<nc:DocumentSequenceID>2</nc:DocumentSequenceID>
+			<ecf:DocumentAugmentation>
+				<ecf:DocumentRendition>
+					<nc:DocumentIdentification/>
+					<nc:Attachment structures:id="Attachment2">
+						<!-- nc:Base64BinaryObject below holds the binary data for the document -->
+						<nc:Base64BinaryObject/>
+						<nc:BinaryDescriptionText>Adobe Acrobat</nc:BinaryDescriptionText>
+						<nc:BinaryFormatText>application/pdf</nc:BinaryFormatText>
+						<nc:BinarySizeValue>32000</nc:BinarySizeValue>
+					</nc:Attachment>
+				</ecf:DocumentRendition>
+				<ecf:RedactionRequiredIndicator>false</ecf:RedactionRequiredIndicator>
+			</ecf:DocumentAugmentation>
+		</filing:FilingConnectedDocument>
+		<filing:FilingLeadDocument structures:id="Document1">
+			<nc:DocumentDescriptionText>Motion</nc:DocumentDescriptionText>
+			<!-- The nc:DocumentFileControlID element below holds the identifier for the document in the FAMDE - e.g. reference number -->
+			<nc:DocumentFileControlID>002X</nc:DocumentFileControlID>
+			<!-- The Document Identification is a required element and specifies an identifer from the submitter, we however do not use it. -->
+			<nc:DocumentIdentification/>
+			<nc:DocumentSequenceID>1</nc:DocumentSequenceID>
+			<ecf:DocumentAugmentation>
+				<ecf:DocumentRendition>
+					<nc:DocumentIdentification/>
+					<nc:Attachment structures:id="Attachment1">
+						<!-- nc:Base64BinaryObject below holds the binary data for the document -->
+						<nc:Base64BinaryObject/>
+						<nc:BinaryDescriptionText>Adobe Acrobat</nc:BinaryDescriptionText>
+						<nc:BinaryFormatText>application/pdf</nc:BinaryFormatText>
+						<nc:BinarySizeValue>32000</nc:BinarySizeValue>
+					</nc:Attachment>
+				</ecf:DocumentRendition>
+				<ecf:RedactionRequiredIndicator>false</ecf:RedactionRequiredIndicator>
+				<!-- ecf:RegisterActionDescriptionCode below contains the filing code, only required on FilingLeadDocument -->
+				<ecf:RegisterActionDescriptionCode>MOT</ecf:RegisterActionDescriptionCode>
+			</ecf:DocumentAugmentation>
+		</filing:FilingLeadDocument>
+		<nc:Case xmlns:civil="https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/civil" xsi:schemaLocation="https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/civil ../schema/civil.xsd">
+			<nc:CaseTitleText>John Doe vs. Jane Smith</nc:CaseTitleText>
+			<j:CaseAugmentation>
+				<j:CaseCourt>
+					<nc:OrganizationIdentification>
+						<nc:IdentificationID>harris:dc</nc:IdentificationID>
+					</nc:OrganizationIdentification>
+				</j:CaseCourt>
+				<j:CaseOfficial>
+					<nc:RoleOfPerson structures:id="Attorney1">
+						<ecf:PersonAugmentation>
+							<!-- This is the attorney id in the EFM -->
+							<ecf:ParticipantID>
+								<nc:IdentificationID>59395710-70B5-4C52-9DF3-F8C6A59A710B</nc:IdentificationID>
+							</ecf:ParticipantID>
+						</ecf:PersonAugmentation>
+					</nc:RoleOfPerson>
+					<j:JudicialOfficialBarMembership>
+						<j:JudicialOfficialBarIdentification>
+							<!-- This is the attorney bar number -->
+							<nc:IdentificationID>10020034</nc:IdentificationID>
+						</j:JudicialOfficialBarIdentification>
+					</j:JudicialOfficialBarMembership>
+					<ecf:CaseOfficialAugmentation>
+						<ecf:CaseRepresentedParty structures:ref="Person1"/>
+					</ecf:CaseOfficialAugmentation>
+				</j:CaseOfficial>
+			</j:CaseAugmentation>
+			<ecf:CaseAugmentation>
+				<ecf:CaseCategoryCode>CV</ecf:CaseCategoryCode>
+				<ecf:CaseNewIndicator>true</ecf:CaseNewIndicator>
+				<ecf:CaseParty>
+					<nc:EntityPerson structures:id="Person1">
+						<nc:PersonName>
+							<nc:PersonGivenName>John</nc:PersonGivenName>
+							<nc:PersonMiddleName>W.</nc:PersonMiddleName>
+							<nc:PersonSurName>Doe</nc:PersonSurName>
+						</nc:PersonName>
+						<ecf:PersonAugmentation>
+							<ecf:CaseParticipantRoleCode>PLA</ecf:CaseParticipantRoleCode>
+							<!-- ecf:ParticipantID below is a required ECF element but not used for a new party. -->
+							<ecf:ParticipantID/>
+							<nc:ContactInformation>
+								<nc:ContactMailingAddress>
+									<nc:LocationStreet>
+										<nc:StreetFullText>123 Main St.</nc:StreetFullText>
+									</nc:LocationStreet>
+									<nc:LocationCityName>Anytown</nc:LocationCityName>
+									<nc:LocationState>
+										<nc:LocationStateName>IN</nc:LocationStateName>
+									</nc:LocationState>
+									<nc:LocationCountry>
+										<nc:LocationCountryName>US</nc:LocationCountryName>
+									</nc:LocationCountry>
+									<nc:LocationPostalCode>12345</nc:LocationPostalCode>
+								</nc:ContactMailingAddress>
+							</nc:ContactInformation>
+						</ecf:PersonAugmentation>
+					</nc:EntityPerson>
+				</ecf:CaseParty>
+				<ecf:CaseParty>
+					<nc:EntityPerson structures:id="Person2">
+						<nc:PersonName>
+							<nc:PersonGivenName>Jane</nc:PersonGivenName>
+							<nc:PersonMiddleName>Q</nc:PersonMiddleName>
+							<nc:PersonSurName>Smith</nc:PersonSurName>
+							<nc:PersonMaidenName>Roberts</nc:PersonMaidenName>
+						</nc:PersonName>
+						<ecf:PersonAugmentation>
+							<ecf:CaseParticipantRoleCode>DEF</ecf:CaseParticipantRoleCode>
+							<ecf:CasePartySelfRepresentationIndicator>true</ecf:CasePartySelfRepresentationIndicator>
+							<ecf:ParticipantID/>
+							<nc:ContactInformation>
+								<nc:ContactMailingAddress>
+									<nc:LocationStreet>
+										<nc:StreetFullText>456 South St.</nc:StreetFullText>
+									</nc:LocationStreet>
+									<nc:LocationCityName>Anytown</nc:LocationCityName>
+									<nc:LocationState>
+										<nc:LocationStateName>IN</nc:LocationStateName>
+									</nc:LocationState>
+									<nc:LocationCountry>
+										<nc:LocationCountryName>US</nc:LocationCountryName>
+									</nc:LocationCountry>
+									<nc:LocationPostalCode>12345</nc:LocationPostalCode>
+								</nc:ContactMailingAddress>
+							</nc:ContactInformation>
+						</ecf:PersonAugmentation>
+					</nc:EntityPerson>
+				</ecf:CaseParty>
+				<ecf:CaseTypeCode>SC</ecf:CaseTypeCode>
+			</ecf:CaseAugmentation>
+			<civil:CaseAugmentation>
+				<civil:AmountInControversy>
+					<nc:Amount>1000</nc:Amount>
+				</civil:AmountInControversy>
+				<civil:ReliefTypeCode/>
+				<ecf:CauseOfActionCode/>
+			</civil:CaseAugmentation>
+		</nc:Case>
+	</filing:FilingMessage>
+	<filing:FilingMessage structures:id="Filing2">
+		<nc:DocumentIdentification/>
+		<ecf:SendingMDELocationID>
+			<nc:IdentificationID>http://example.com/efsp1</nc:IdentificationID>
+		</ecf:SendingMDELocationID>
+		<ecf:ServiceInteractionProfileCode>urn:oasis:names:tc:legalxml-courtfiling:schema:xsd:WebServicesMessaging-5.0</ecf:ServiceInteractionProfileCode>
+		<j:CaseCourt>
+			<nc:OrganizationIdentification>
+				<!-- content reference for a court organization -->
+				<nc:IdentificationID>harris:dc</nc:IdentificationID>
+			</nc:OrganizationIdentification>
+		</j:CaseCourt>
+		<nc:DocumentPostDate>
+			<nc:DateTime>2008-07-07T13:47:42.0Z</nc:DateTime>
+		</nc:DocumentPostDate>
+		<ecf:ElectronicServiceInformation>
+			<ecf:ReceivingMDELocationID>
+				<nc:IdentificationID>http://example.com/efsp2</nc:IdentificationID>
+			</ecf:ReceivingMDELocationID>
+			<ecf:ReceivingMDEProfileCode>urn:oasis:names:tc:legalxml-courtfiling:schema:xsd:WebServicesMessaging-5.0</ecf:ReceivingMDEProfileCode>
+			<!-- ecf:ServiceRecipientID identifies who was served electronically. see section 6.2.9 -->
+			<ecf:ServiceRecipientID>
+				<nc:IdentificationID>69395710-70B5-4C52-9DF3-F8C6A59A710C</nc:IdentificationID>
+			</ecf:ServiceRecipientID>
+		</ecf:ElectronicServiceInformation>
+		<filing:FilingConnectedDocument structures:id="Document3">
+			<nc:DocumentDescriptionText>Exhibit</nc:DocumentDescriptionText>
+			<!-- The nc:DocumentFileControlID element below holds the identifier for the document in the FAMDE - e.g. reference number -->
+			<nc:DocumentFileControlID>001X</nc:DocumentFileControlID>
+			<!-- The Document Identification is a required element and specifies an identifer from the submitter, we however do not use it. -->
+			<nc:DocumentIdentification/>
+			<nc:DocumentSequenceID>2</nc:DocumentSequenceID>
+			<ecf:DocumentAugmentation>
+				<ecf:DocumentRendition>
+					<nc:DocumentIdentification/>
+					<nc:Attachment structures:id="Attachment3">
+						<!-- nc:Base64BinaryObject below holds the binary data for the document -->
+						<nc:Base64BinaryObject/>
+						<nc:BinaryDescriptionText>Adobe Acrobat</nc:BinaryDescriptionText>
+						<nc:BinaryFormatText>application/pdf</nc:BinaryFormatText>
+						<nc:BinarySizeValue>32000</nc:BinarySizeValue>
+					</nc:Attachment>
+				</ecf:DocumentRendition>
+				<ecf:RedactionRequiredIndicator>false</ecf:RedactionRequiredIndicator>
+			</ecf:DocumentAugmentation>
+		</filing:FilingConnectedDocument>
+		<filing:FilingLeadDocument structures:id="Document4">
+			<nc:DocumentDescriptionText>Complaint</nc:DocumentDescriptionText>
+			<!-- The nc:DocumentFileControlID element below holds the identifier for the document in the FAMDE - e.g. reference number -->
+			<nc:DocumentFileControlID>002X</nc:DocumentFileControlID>
+			<!-- The Document Identification is a required element and specifies an identifer from the submitter, we however do not use it. -->
+			<nc:DocumentIdentification/>
+			<nc:DocumentSequenceID>1</nc:DocumentSequenceID>
+			<ecf:DocumentAugmentation>
+				<ecf:DocumentRendition>
+					<nc:DocumentIdentification/>
+					<nc:Attachment structures:id="Attachment4">
+						<!-- nc:Base64BinaryObject below holds the binary data for the document -->
+						<nc:Base64BinaryObject/>
+						<nc:BinaryDescriptionText>Adobe Acrobat</nc:BinaryDescriptionText>
+						<nc:BinaryFormatText>application/pdf</nc:BinaryFormatText>
+						<nc:BinarySizeValue>32000</nc:BinarySizeValue>
+					</nc:Attachment>
+				</ecf:DocumentRendition>
+				<ecf:RedactionRequiredIndicator>false</ecf:RedactionRequiredIndicator>
+				<!-- ecf:RegisterActionDescriptionCode below contains the filing code, only required on FilingLeadDocument -->
+				<ecf:RegisterActionDescriptionCode>COMPLT</ecf:RegisterActionDescriptionCode>
+			</ecf:DocumentAugmentation>
+		</filing:FilingLeadDocument>
+		<!-- We only use the case information from the first FilingMessage but nc:Case needed below to satisfy schema requirements -->
+		<nc:Case>
+			<j:CaseAugmentation/>
+		</nc:Case>
+	</filing:FilingMessage>
+	
+	<payment:PaymentMessage xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xsi:schemaLocation="https://docs.oasis-open.org/legalxml-courtfiling/ns/v5.0/payment ../schema/payment.xsd">
+		<cac:Address/>
+		<cac:AllowanceCharge>
+			<cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+			<cbc:Amount currencyID="USD">100.00</cbc:Amount>
+			<cac:TaxCategory>
+				<cbc:Percent>.0625</cbc:Percent>
+				<cac:TaxScheme/>
+			</cac:TaxCategory>
+			<cac:TaxTotal>
+				<cbc:TaxAmount currencyID="USD">.06</cbc:TaxAmount>
+			</cac:TaxTotal>
+			<cac:PaymentMeans>
+				<cbc:PaymentMeansCode/>
+				<!-- PaymentID below contains the identifier for the payment account -->
+				<cbc:PaymentID>e74adb9f-f3fd-4a18-ad2b-662001ae97fa</cbc:PaymentID>
+			</cac:PaymentMeans>
+		</cac:AllowanceCharge>
+		<payment:CorrectedPaymentIndicator>false</payment:CorrectedPaymentIndicator>
+		<payment:Payer/>
+	</payment:PaymentMessage>
+</wrapper:ReviewFilingRequest>
